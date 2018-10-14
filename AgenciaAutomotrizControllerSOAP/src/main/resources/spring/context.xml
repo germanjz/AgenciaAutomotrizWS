@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+    xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://jax-ws.dev.java.net/spring/core
+        http://jax-ws.java.net/spring/core.xsd
+        http://jax-ws.dev.java.net/spring/servlet
+        http://jax-ws.java.net/spring/servlet.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="mx.com.example" />
+	
+	<wss:binding url="/automovilController">
+        <wss:service>
+            <ws:service bean="#automovilControllerWS"/>
+        </wss:service>
+    </wss:binding>
+    
+    <wss:binding url="/marcaAutomovilController">
+        <wss:service>
+            <ws:service bean="#marcaAutomovilWS"/>
+        </wss:service>
+    </wss:binding>
+    
+    <wss:binding url="/modeloAutomovilController">
+        <wss:service>
+            <ws:service bean="#modeloAutomovilWS"/>
+        </wss:service>
+    </wss:binding>
+ 
+ 	<wss:binding url="/catalogoController">
+        <wss:service>
+            <ws:service bean="#catalogoControllerWS"/>
+        </wss:service>
+    </wss:binding>
+	
+</beans>

@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.com.example</groupId>
+	<artifactId>AgenciaAutomotrizWSSOAP</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<properties>
+		<spring.version>4.3.7.RELEASE</spring.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<cxf.version>3.2.4</cxf.version>
+		<jackson.version>2.5.3</jackson.version>
+		<java.version>1.8</java.version>
+		<org.slf4j.version>1.7.13</org.slf4j.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>mx.com.example</groupId>
+			<artifactId>AgenciaAutomotrizControllerSOAP</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>${artifactId}</finalName>
+	</build>
+</project>
